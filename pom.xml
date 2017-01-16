@@ -5,20 +5,50 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 <groupId>com.concretepage</groupId>
 <artifactId>Spring4</artifactId>
-<version>1</version>
+<version>2</version>
 <packaging>war</packaging>
 
+<profiles>
+<profile>
+	<id>qa</id>
+	<properties><fileName>warfile-qa</fileName></properties>
+</profile>
+<profile>
+	<id>dev</id>
+	<properties><fileName>warfile-dev</fileName></properties>
+</profile>
+<profile>
+	<id>prod</id>
+	<properties><fileName>warfile-prod</fileName></properties>
+</profile>
+</profiles>
+
 <build>
+
 <plugins>
+<!--
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-war-plugin</artifactId>
-    <version>2.3</version>
+    <version>2.4</version>
     <configuration>
-        <warName>spring4-1</warName>
+        <warName>xxxxxspring4-1</warName>
         <outputDirectory>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps</outputDirectory>
     </configuration>
 </plugin>
+-->
+
+ 
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <configuration>
+        <warName>${fileName}</warName>
+        <outputDirectory>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\weird</outputDirectory>
+    </configuration>
+</plugin>
+
+
 </plugins>
 </build>
 
