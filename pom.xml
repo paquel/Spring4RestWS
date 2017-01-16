@@ -11,15 +11,24 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <profiles>
 <profile>
 	<id>qa</id>
-	<properties><fileName>warfile-qa</fileName><dirName>spring-qa</dirName></properties>
+	<properties>
+		<fileName>spring4-1</fileName>
+		<dirName>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\spring-qa</dirName>
+	</properties>
 </profile>
 <profile>
 	<id>dev</id>
-	<properties><fileName>warfile-dev</fileName><dirName>spring-dev</dirName></properties>
+	<properties>
+		<fileName>spring4-1</fileName>
+		<dirName>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps</dirName>
+	</properties>
 </profile>
 <profile>
 	<id>prod</id>
-	<properties><fileName>warfile-prod</fileName><dirName>spring-prod</dirName></properties>
+	<properties>
+		<fileName>spring4-1</fileName>
+		<dirName>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\spring-prod</dirName>
+	</properties>
 </profile>
 </profiles>
 
@@ -32,7 +41,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <artifactId>maven-war-plugin</artifactId>
     <configuration>
         <warName>${fileName}</warName>
-        <outputDirectory>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\${dirName}</outputDirectory>
+        <outputDirectory>${dirName}</outputDirectory>
     </configuration>
 </plugin>
 
