@@ -11,15 +11,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <profiles>
 <profile>
 	<id>qa</id>
-	<properties><fileName>warfile-qa</fileName></properties>
+	<properties><fileName>warfile-qa</fileName><dirName>spring-qa</dirName></properties>
 </profile>
 <profile>
 	<id>dev</id>
-	<properties><fileName>warfile-dev</fileName></properties>
+	<properties><fileName>warfile-dev</fileName><dirName>spring-dev</dirName></properties>
 </profile>
 <profile>
 	<id>prod</id>
-	<properties><fileName>warfile-prod</fileName></properties>
+	<properties><fileName>warfile-prod</fileName><dirName>spring-prod</dirName></properties>
 </profile>
 </profiles>
 
@@ -32,7 +32,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <artifactId>maven-war-plugin</artifactId>
     <configuration>
         <warName>${fileName}</warName>
-        <outputDirectory>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\weird</outputDirectory>
+        <outputDirectory>C:\Users\Len\Tomcat9\apache-tomcat-9.0.0.M15\webapps\${dirName}</outputDirectory>
     </configuration>
 </plugin>
 
